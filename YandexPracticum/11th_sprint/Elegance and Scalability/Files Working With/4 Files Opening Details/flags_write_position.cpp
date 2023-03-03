@@ -9,7 +9,7 @@ int main(int argc, const char** argv) {
 
     setlocale(LC_ALL, "Ru");
 
-    // 1
+    //  1
     {
         fstream fout("telefon.txt", ios::out);
         fout << "У меня зазвонил телефон."sv << endl;
