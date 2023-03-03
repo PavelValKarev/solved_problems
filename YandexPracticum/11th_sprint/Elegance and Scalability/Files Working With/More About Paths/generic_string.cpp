@@ -23,6 +23,6 @@ int main()
     cout << "p.string() после make_preferred: "sv << p.string() << endl;
     //Формат generic одинаковый на всех операционных системах. Он определяет
     //папки прямым слешем. Чтобы получить generic-представление, вызовите
-    //метод generic_string. 
+    //метод generic_string . 
     cout << "p.generic_string():              "sv << p.generic_string() << endl;
 }
