@@ -18,7 +18,7 @@ int main() {
         auto it = unique(nums.begin(), nums.end());
         nums.erase(it, nums.end());
         return nums;
-    }();
+    }() ;
 
     int n;
     // прочитаем n чисел из потока ввода и найдём их в sorted_v
