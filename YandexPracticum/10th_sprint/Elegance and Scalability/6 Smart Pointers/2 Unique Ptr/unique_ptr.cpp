@@ -22,7 +22,7 @@ struct Cat {
         cout << name_ << " cat was destroyed"s << endl;
     }
     void Speak() const {
-        cout << "Meow!"s << endl;
+        cout << "Meow!"s << endl ;
     }
 
 private:
