@@ -25,3 +25,9 @@ private:
     Point center_;
     double radius_ = 1.0;
 };
+
+int main() {
+    Circle c;
+    c.SetColor(Color::RED);
+    c.SetRadius(2);
+}
