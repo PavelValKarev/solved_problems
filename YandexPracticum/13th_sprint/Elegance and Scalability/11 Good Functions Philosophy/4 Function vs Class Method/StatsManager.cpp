@@ -36,8 +36,7 @@ int ComputeMedianAge(InputIt range_begin, InputIt range_end) {
     return middle->age;
 }
 
-class StatsManager {
-public:
+namespace StatsManager {
     static vector<Person> ReadPersons(istream& in_stream = cin);
     static AgeStats ComputeStats(vector<Person> persons);
     static void PrintStats(const AgeStats& stats, ostream& out_stream = cout);
