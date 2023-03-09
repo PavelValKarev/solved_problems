@@ -36,6 +36,7 @@ int ComputeMedianAge(InputIt range_begin, InputIt range_end) {
     return middle->age;
 }
 
+//использование простанства имен вместо ненужного класса
 namespace StatsManager {
     static vector<Person> ReadPersons(istream& in_stream = cin);
     static AgeStats ComputeStats(vector<Person> persons);
