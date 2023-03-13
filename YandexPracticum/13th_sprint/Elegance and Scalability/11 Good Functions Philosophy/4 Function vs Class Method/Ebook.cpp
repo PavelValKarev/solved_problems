@@ -6,10 +6,16 @@
 
 using namespace std;
 
+
+
 class ReadersDataBase {
 public:
     void Read(int user, int page) {
-        
+
+        if (user >= readers.size()) {
+            readers.resize(user + 1);
+        }
+
         if (readers[user] > 0) {
 
             //reader читает от страницы на которой остановился ранее
@@ -18,27 +24,34 @@ public:
             for (size_t m = readers[user] + 1; m <= page; ++m) {
 
                 ebook[m]++;
-            }        
+            }
+
         }
-        
+
         else {
 
             //общее число читателей
             ++readers_count;
-                        
+
             for (size_t m = 0; m <= page; ++m) {
                 ebook[m]++;
             }
-        }     
 
-        readers[user] = page;            
+        }
+
+        readers[user] = page;
+
     }
 
     double Cheer(int user) {
-        
+
+        if (user >= readers.size()) {
+            readers.resize(user + 1);
+        }
+
         int pages_read_by_user = readers[user];
 
-        if ((readers_count == 1) && (readers[user] > 0) ) {
+        if ((readers_count == 1) && (readers[user] > 0)) {
             return 1;
         }
 
@@ -47,24 +60,26 @@ public:
         }
 
         else {
-            
-            int readers_on_page = ebook[pages_read_by_user];            
+
+            int readers_on_page = ebook[pages_read_by_user];
 
             int less_readers = readers_count - readers_on_page;
             if (less_readers == 0) {
                 return 0;
             }
-            
+
             else {
                 double stats{};
                 stats = (static_cast<double>(less_readers) / (readers_count - 1));
                 return stats;
-            }            
-        }       
+            }
+
+        }
+
     }
 
 private:
-    vector<int> readers = vector<int>(100001, 0);
+    vector<int> readers = vector<int> {};
     vector<int> ebook = vector<int>(1001, 0);
     int readers_count = 0;
 };
@@ -95,7 +110,7 @@ void ProcessRequests(istream& in, ostream& out) {
 
 int main() {
 
-    ifstream in_file("input3.txt"s);
+    ifstream in_file("input.txt"s);
     //ProcessRequests(in_file, cout);
     ProcessRequests(cin, cout);
 }
