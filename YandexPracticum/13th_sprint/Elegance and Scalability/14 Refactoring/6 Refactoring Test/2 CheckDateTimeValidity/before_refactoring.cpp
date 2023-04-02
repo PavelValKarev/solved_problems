@@ -65,10 +65,10 @@ int main() {
 
     dt.year = 2023;
     dt.month = 4;
-    dt.day = -2;
+    dt.day = 1;
     dt.hour = 20;
     dt.minute = 45;
-    dt.minute;
+    dt.second = 3;
 
     CheckDateTimeValidity(dt);
 
