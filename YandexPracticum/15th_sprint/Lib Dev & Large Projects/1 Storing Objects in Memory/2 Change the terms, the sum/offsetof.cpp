@@ -9,7 +9,6 @@ struct Plate {
     char c3;
     int region;
 };
-#include <iostream>
 
 int main() {
     cout << "Sizeof = "s << sizeof(Plate) << endl;
