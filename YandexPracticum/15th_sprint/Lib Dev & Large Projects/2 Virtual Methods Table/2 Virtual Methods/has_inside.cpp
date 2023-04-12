@@ -58,6 +58,7 @@ void FocusPocus(const vector<MagicHat*> hats) {
             hat->WhatInside();
         }
     }
+    cout << "But the size of magic hat is "s << sizeof(MagicHat) << endl;
 }
 
 int main() {
