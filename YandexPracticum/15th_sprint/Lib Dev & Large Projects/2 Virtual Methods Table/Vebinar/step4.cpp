@@ -16,7 +16,10 @@ public:
     MagicHat::Vtable* vptr_ = nullptr;
 
     //размещаем саму таблицу и называем ее VTABLE
-    MagicHat::Vtable VTABLE;
+    // !!! эту структуру нужно объявить статической
+    //тогда она будет создана только один раз при
+    //инициализации класса
+    static MagicHat::Vtable VTABLE;
     
     virtual void WhatInside() const {
         cout << "Nothing"s << endl;
