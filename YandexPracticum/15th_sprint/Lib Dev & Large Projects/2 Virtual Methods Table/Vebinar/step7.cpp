@@ -2,6 +2,7 @@ class MagicHat {
 public:
     //реализуем публичные методы////////
     void WhatInside() const {
+        //функции передают указатель на свой экземпляр
         vptr_->inside_this(this);
     }
 
@@ -30,3 +31,6 @@ private:
         cout << "Nothing"sv << endl;
     }
 };
+
+//определяем саму таблицу, записываем в нее методы
+MagicHat::Vtable MagicHat::VTABLE = { MagicHat::WhatInside, MagicHat::Delete };
