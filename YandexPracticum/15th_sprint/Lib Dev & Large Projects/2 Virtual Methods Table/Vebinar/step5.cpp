@@ -6,9 +6,12 @@ public:
     using DeleteFunction = void(*)(MagicHat*);
 
     struct Vtable {
-        //используем классические названия типов
-        InsideFunction inside_this;
+        //-используем классические названия типов
+        //-в этой структуре delete правильнее хранить
+        //на первом месте
         DeleteFunction delete_this;
+        InsideFunction inside_this;
+        
     };        
     
     MagicHat::Vtable* vptr_ = nullptr;    
@@ -21,6 +24,8 @@ public:
         delete obj;
     }
 
+    //через указатель можно было бы обращаться к полям
+    //если бы они были
     static void WhatInside(const MagicHat*) {
         cout << "Nothing"sv << endl;
     }    
