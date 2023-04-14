@@ -50,7 +50,7 @@ namespace img_lib {
         его цвета в буфер в формате RGB с помощью:
         */
         for (int y = 0; y < image.GetHeight(); ++y) {
-            for (int x = 0; y < image.GetWidth(); ++x ) {
+            for (int x = 0; x < image.GetWidth(); ++x ) {
                 buff[x * 3 + 0] = static_cast<char>(image.GetPixel(x, y).r);
                 buff[x * 3 + 1] = static_cast<char>(image.GetPixel(x, y).g);
                 buff[x * 3 + 2] = static_cast<char>(image.GetPixel(x, y).b);
@@ -123,4 +123,6 @@ namespace img_lib {
         return result;
     }
     
+}  // namespace img_lib
+
 }  // namespace img_lib
