@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(configure VERSION 0.0.1)
+project(Example3 VERSION 0.0.1)
 
 configure_file(
 		config.h.in
