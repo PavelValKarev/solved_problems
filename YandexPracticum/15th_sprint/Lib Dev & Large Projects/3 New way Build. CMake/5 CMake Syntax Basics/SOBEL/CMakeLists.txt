@@ -16,8 +16,6 @@ else()
     set(SYSTEM_LIBS)
 endif()
 
-set(IMGLIB_FILES "img_lib.h" "img_lib.cpp" "ppm_image.h" "ppm_image.cpp")
-
 add_executable(hmirror ${IMGLIB_FILES} "hmirr.cpp")
 add_executable(vmirror ${IMGLIB_FILES} "vmirr.cpp") 
 add_executable(sobel ${IMGLIB_FILES} "sobel.cpp") 
