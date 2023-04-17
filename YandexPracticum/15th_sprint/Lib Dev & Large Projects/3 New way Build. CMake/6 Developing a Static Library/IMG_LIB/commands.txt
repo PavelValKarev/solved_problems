@@ -1,0 +1,4 @@
+//from 'build' folder
+
+cmake ../ImgLib -DCMAKE_BUILD_TYPE=Debug
+cmake --build . --verbose
