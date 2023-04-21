@@ -1,0 +1,3 @@
+//goto hello_cmake_build folder in cmd
+//command 1: cmake ../hello_cmake
+//commant 2: cmake --build .
