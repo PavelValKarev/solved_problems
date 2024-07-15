@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+struct House {
+    string color;
+    string floors;
+};
+
+int main()
+{
+    vector<string> colors;
+    vector <string> floors;
+    House house;
+    vector<House> houses;
+    
+    string c_1, f_1, c_2, f_2, c_3, f_3, req_c, req_f;
+    cin >> c_1 >> f_1 >> c_2 >> f_2 >> c_3 >> f_3 >> req_c >> req_f;
+        
+    colors.push_back(c_1);
+    colors.push_back(c_2);
+    colors.push_back(c_3);
+
+    floors.push_back(f_1);
+    floors.push_back(f_2);
+    floors.push_back(f_3);
+
+    for (size_t i = 0; i<colors.size(); i++) {
+        string color = colors[i];
+        string floor = floors[i];
+        house.color = color;
+        house.floors = floor;
+        houses.push_back(house);
+    }
+        
+    for (size_t i = 0; i < houses.size(); i++) {
+        house = houses[i];
+        ((req_c == "?"s) && (req_f == "-1"s)) && std::cout << i+1 << endl;
+        ((req_c == "?"s) && (req_f == house.floors)) && std::cout << i + 1 << endl;
+        ((req_c == house.color) && (req_f == "-1"s)) && std::cout << i + 1 << endl;
+        ((req_c == house.color) && (req_f == house.floors)) && std::cout << i + 1 << endl;
+    }
+}
+
