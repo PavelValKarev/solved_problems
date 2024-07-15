@@ -1,0 +1,93 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<string>ParseQuery(string text) {
+    vector<string> words;
+    string word;
+
+    for (char letter : text) {
+        if (letter == ' ') {
+            words.push_back(word);
+            word.clear();
+        }
+        else {
+            word = word + letter;            
+        }        
+    }
+
+    if (text.back() != ' ') {
+        words.push_back(word);
+    }
+
+    return words;
+}
+
+void PrintWords(vector<string> words) {
+    for (string word : words) {
+        cout << word << endl;
+    }
+}
+
+string GetRequest(vector<string> words) {
+    string request;
+
+    request = words.back();
+
+    return request;
+}
+
+void PrintRequest(string request) {
+    cout << "Request: "s << request << endl;
+}
+
+vector<string> GetHouseColors(vector<string> words) {
+    vector<string> colors;
+    words.pop_back();
+    colors = words;
+    return colors;
+}
+
+int FindNumber(vector<string> colors, string request) {
+    int result = 0;
+    for (size_t i = 0; i < colors.size(); i++) {
+        if (colors[i] == request) {
+            result = i + 1;
+            return result;
+        }        
+    }
+    return 0;
+}
+
+void PrintNumber(int number) {
+    (number == 0) && cout << "Seek somewhere else"s << endl;
+    (number != 0) && cout << "Enter the house "s << number << endl;
+}
+
+int main()
+{
+    string text;
+    vector<string> words;
+    string request;
+    vector<string> colors;
+    int number = 0;
+
+    getline(cin, text);
+
+    words = ParseQuery(text);
+    //PrintWords(words);
+
+    request = GetRequest(words);
+    //PrintRequest(request);
+
+    colors = GetHouseColors(words);
+    //PrintWords(colors);
+    
+    number = FindNumber(colors, request);
+
+    PrintNumber(number);
+
+}
+
