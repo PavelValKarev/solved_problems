@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x=0, y=0, z=0, z_truth=0;
+
+    cin >> x >> y >> z ;
+
+    z_truth = x + y;
+
+    ((x + y != z) && (cout << "Error. The sum of "s << x << " and "s << y << " is "s << z_truth << endl));
+}
