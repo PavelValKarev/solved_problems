@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <vector> 
+
+using namespace std;
+
+int main() {
+    string query;
+    getline(cin, query);
+    string word;
+    vector<string> words;
+    
+    int i = 0;
+    for (char letter : query){
+        ++i;
+        if (letter != ' '){
+            word = word + letter;
+        }
+        else{
+            words.push_back(word);
+            word.clear();
+            cout << i-1 << endl;
+        }        
+    }
+    
+     if (query.back() != 0){
+            words.push_back(word);
+             cout << i << endl;
+        }
+        
+    /*
+    for (string word : words){
+        cout << word << endl;
+    }
+    */
+
+    // выведите все индексы символов, следующие за словами
+}
