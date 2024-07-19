@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+	int month_number = 0;
+	vector<int> month_lengths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	cin >> month_number; // считайте номер месяца
+	cout << month_lengths[month_number];
+	// и выведите количество дней в нём
+}
