@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string str = "Drawing indices for fun and profit"s;
+    int num_iters = 0;
+    // считаем с клавиатуры, сколько раз мы бы хотели повторить цикл
+    cin >> num_iters;
+
+    for (int i = 0; i < num_iters; ++i) {
+        int index1, index2;
+        // считаем индексы
+        cin >> index1 >> index2;
+
+        // если index1 отрицательный или больше, чем длина нашей строки,
+        // то продолжать этот шаг цикла невозможно
+        if (index1 < 0 || index1 >= str.size()) {
+            // скомандовав continue, программист просит перейти на следующую итерацию,
+            // не заканчивая текущую 
+            continue;
+        }
+
+        // аналогичная логика для второго индекса
+        if (index2 < 0 || index2 >= str.size()) {
+            continue;
+        }
+        // выведем результат сравнения символов строки по указанным индексам
+        cout << (str[index1] == str[index2]) << endl;
+    }
+}
