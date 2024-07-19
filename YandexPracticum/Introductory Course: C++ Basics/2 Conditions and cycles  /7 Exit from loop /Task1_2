@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+vector<string> ParseQuery(string text) {
+    string word;
+    vector<string>words;
+    for (char letter : text) {
+        if (letter != ' ') {
+            word = word + letter;
+        }
+        else {
+            words.push_back(word);
+            word.clear();
+        }        
+    }
+
+    if (text.back() != ' ') {
+        words.push_back(word);
+    }
+
+    return words;
+}
+
+void PrintWords(vector<string> words) {
+    for (size_t i = 0; i< words.size(); ++i) {
+        cout << words[i] << endl;
+    }   
+}
+
+void PrintResult(vector<string> words) {
+    for (size_t i = 0; i < 10; ++i) {
+        if (words[i] == "1"s) {
+            // А если найден, то так:
+            cout << "Om-nom-nom :P" << endl;
+        }
+        else if (words[i] == "0"s) {
+            // Если торт не найдён выведите текст так:
+            cout << "No cake :(" << endl;
+            break;
+        }
+    }
+}
+
+int main() {
+    string text, word;
+    vector<string> words;
+    
+    getline(cin, text);
+
+    words = ParseQuery(text);
+    
+    //PrintWords(words);
+
+    PrintResult(words);
+}
