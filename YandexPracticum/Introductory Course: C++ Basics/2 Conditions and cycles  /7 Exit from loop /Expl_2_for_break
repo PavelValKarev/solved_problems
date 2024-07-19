@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string animal;
+    // считаем название животного
+    cin >> animal;
+
+    for (int i = 0; i < animal.size(); ++i) {
+        // если текущая буква строки - а, 
+        if (animal[i] == 'a') {
+            // то выведем индекс i на экран и закончим цикл
+            cout << i << endl;
+            break;
+        }
+    }
+
+    cout << "Yes!"s << endl;
+}
