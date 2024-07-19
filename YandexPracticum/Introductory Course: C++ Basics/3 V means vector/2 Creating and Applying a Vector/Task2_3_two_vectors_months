@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+	int month_number = 0;
+	string text;
+	vector<int> month_lengths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	vector<string> months = { "January"s, "February"s, "March"s, "April"s, "May"s, "June"s, "July"s, "August"s, "September"s, "October"s, "November"s, "December"s};
+
+	cin >> text; // считайте номер месяца
+	month_number = stoi(text);
+
+	if ((month_number < 1) || (month_number > 12)) {
+		cout << "Incorrect month"s << endl;
+		
+	}
+	else {
+		month_number = month_number - 1;
+		cout << "There are "s << month_lengths[month_number] << " days in "s << months[month_number] << endl;
+		// и выведите количество дней в нём
+	}	
+}
