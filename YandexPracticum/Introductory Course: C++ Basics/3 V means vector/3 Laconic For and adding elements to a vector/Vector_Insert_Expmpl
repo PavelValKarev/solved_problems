@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+    int number = 0;
+    vector<int> ages;
+    int age = 0;
+
+    cin >> number;
+
+    for (size_t i = 0; i < number; ++i) {
+        cin >> age;
+        ages.push_back(age);
+    }
+
+    ages.insert(ages.begin(), number);
+
+    for (int element : ages) {
+        cout << element << endl;
+    }
+}
+
+/*
+Инициализировать вектор
+Спросить сколько животных будет в векторе
+Добавить возраст животных
+В начало вектора через итератор вставить количество животных.
+Вывести в поток - посмотреть.
+Видно, что вектор сделал resize(). 
+В поток вывелись все эл-ы, включая кол-во и возрасты. 
+*/
