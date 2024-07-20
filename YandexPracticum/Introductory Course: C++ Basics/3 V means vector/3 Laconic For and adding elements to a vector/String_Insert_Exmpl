@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string hello = "Hello World!\n";
+
+    hello.insert(6, "All in the ");
+
+    std::cout << hello;
+}
+
+/*
+Insert for string
+Указывается номер элемента в строке, перед которым нужно сделать вставку
+*/
