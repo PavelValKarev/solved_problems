@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    vector<string> elephant_friends;
+    string friend_name;
+
+    cout << "Enter elephant friend name or \"end\" :"s << endl;
+
+    while (cin >> friend_name) {
+        if (friend_name != "end"s) {
+            elephant_friends.push_back(friend_name);
+        }
+        else {
+            break;
+        }            
+    }
+
+    if (elephant_friends.size()<10) {
+        elephant_friends.resize(10, "N/A"s);
+    }  
+
+    for (string name : elephant_friends) {
+        cout << name << endl;
+    }
+}
+
+/*
+Собираем в вектор имена друзей слона, пока имя != "end"
+Делаем resize() вектора до 10. Вставляем N/A если друзей меньше 5.
+*/
