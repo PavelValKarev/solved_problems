@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+// не забудьте подключить библиотеку <vector>
+#include <vector>
+
+using namespace std;
+
+vector<string> ParseQuery(string query) {
+    vector<string> words;
+    string word;
+    for (char c : query) {
+        if (c == ' ') {
+            // Удалите вывод в cout и замените его на добавление элемента в вектор.
+            if ((word[0] != ' ')&&(!word.empty())) {
+                words.push_back(word);
+            }
+            
+            //cout << '[' << word << ']' << endl;
+            word.clear();
+        }
+        else {
+            word += c;
+        }
+    }
+    if ((!query.empty())&&(query.back() != ' ')) {
+        words.push_back(word);
+    }
+    return words;
+}
+
+void PrintWords(vector<string> words) {
+    //if (!words.empty()) {
+        for (string word : words) {
+            cout << "["s << word << "]"s << endl;
+        }
+    //}    
+}
+
+int main() {
+    // Объявите переменную-вектор, которая будет хранить слова.
+    // Назовите её words.
+
+    string query;
+    string word;
+    vector<string> words;
+
+    getline(cin, query);
+
+    words = ParseQuery(query);
+
+    PrintWords(words);
+
+}
